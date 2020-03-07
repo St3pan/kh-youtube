@@ -1,0 +1,22 @@
+{
+  "name": "kh-youtube",
+  "version": "1.0.0",
+  "description": "youtube clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/St3pan/kh-youtube.git"
+  },
+  "author": "Khylko Stepan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/St3pan/kh-youtube/issues"
+  },
+  "homepage": "https://github.com/St3pan/kh-youtube#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
