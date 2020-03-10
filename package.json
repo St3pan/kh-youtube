@@ -2,9 +2,10 @@
   "name": "kh-youtube",
   "version": "1.0.0",
   "description": "youtube clone",
-  "main": "index.js",
+  "main": "init.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node init.js",
+    "dev": "nodemon --exec babel-node init.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,16 @@
   },
   "homepage": "https://github.com/St3pan/kh-youtube#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
