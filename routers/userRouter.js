@@ -1,6 +1,11 @@
-import express from 'express'
-import routes from '../routes'
-import { userDetail, editProfile, changePassword, users } from '../controllers/userController'
+import express from "express"
+import routes from "../routes"
+import {
+  userDetail,
+  editProfile,
+  changePassword,
+  users
+} from "../controllers/userController"
 
 const userRouter = express.Router()
 

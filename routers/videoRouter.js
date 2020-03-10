@@ -1,6 +1,12 @@
-import express from 'express'
-import routes from './../routes'
-import { videos, videoUpload, videoDetail, editVideo, deleteVideo } from '../controllers/videoController'
+import express from "express"
+import routes from "./../routes"
+import {
+  videos,
+  videoUpload,
+  videoDetail,
+  editVideo,
+  deleteVideo
+} from "../controllers/videoController"
 
 const videoRouter = express.Router()
 
