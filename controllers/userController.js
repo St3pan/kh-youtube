@@ -21,12 +21,12 @@ export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Login" })
 
 export const postLogin = (req, res) => {
-  //Check password with db
+  // Check password with db
   res.redirect(routes.home)
 }
 
 export const logout = (req, res) => {
-  //Create a logout function
+  // Create a logout function
   res.redirect(routes.home)
 }
 export const users = (req, res) => res.render("users", { pageTitle: "Users" })
