@@ -12,12 +12,12 @@ export const home = async (req, res) => {
 }
 export const search = async (req, res) => {
   const {
-    query: { term: searchingFor }
+    query: { term: searchingFor },
   } = req
   let videos = []
   try {
     videos = await Video.find({
-      title: { $regex: searchingFor, $options: "i" }
+      title: { $regex: searchingFor, $options: "i" },
     })
   } catch (e) {
     console.log(e)
@@ -31,19 +31,19 @@ export const getVideoUpload = (req, res) =>
 export const postVideoUpload = async (req, res) => {
   const {
     body: { title, description },
-    file: { path }
+    file: { path },
   } = req
   const newVideo = await Video.create({
     fileUrl: path,
     title,
-    description
+    description,
   })
   res.redirect(routes.videoDetail(newVideo.id))
 }
 
 export const videoDetail = async (req, res) => {
   const {
-    params: { id }
+    params: { id },
   } = req
   try {
     const video = await Video.findById(id)
@@ -54,7 +54,7 @@ export const videoDetail = async (req, res) => {
 }
 export const getEditVideo = async (req, res) => {
   const {
-    params: { id }
+    params: { id },
   } = req
   try {
     const video = await Video.findById(id)
@@ -67,7 +67,7 @@ export const getEditVideo = async (req, res) => {
 export const postEditVideo = async (req, res) => {
   const {
     params: { id },
-    body: { title, description }
+    body: { title, description },
   } = req
   try {
     await Video.findOneAndUpdate({ _id: id }, { title, description })
@@ -78,7 +78,7 @@ export const postEditVideo = async (req, res) => {
 }
 export const deleteVideo = async (req, res) => {
   const {
-    params: { id }
+    params: { id },
   } = req
   try {
     await Video.findOneAndRemove({ _id: id })
