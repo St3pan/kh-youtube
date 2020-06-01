@@ -4,9 +4,16 @@
   "description": "youtube clone",
   "main": "init.js",
   "scripts": {
-    "start": "nodemon --exec babel-node init.js",
-    "dev:assets": "webpack --mode=development -w",
-    "build": "webpack --mode=production"
+    "dev:server": "nodemon --exec babel-node src/init.js --delay 2 --ignore '.scss' --ignore 'static' ",
+    "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
+    "build:assets": "cd src && WEBPACK_ENV=production webpack",
+    "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
+    "copyAll": "cp -R src/static build && cp -R src/views build",
+    "build": "npm run build:server && npm run build:assets && npm run copyAll",
+    "prebuild": "rm -rf build",
+    "tunnel": "lt --port 4000",
+    "start": "PRODUCTION=true node build/init.js",
+    "prestart": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -47,7 +54,8 @@
     "pug": "^2.0.4",
     "sass-loader": "^8.0.2",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "nodemon": "^2.0.4"
   },
   "devDependencies": {
     "eslint-config-prettier": "^6.11.0",
