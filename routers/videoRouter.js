@@ -14,12 +14,7 @@ import { onlyPrivate } from "./../middlewares"
 const videoRouter = express.Router()
 
 videoRouter.get(routes.videoUpload, onlyPrivate, getVideoUpload)
-videoRouter.post(
-  routes.videoUpload,
-  onlyPrivate,
-  postVideoUpload,
-  postVideoUpload
-)
+videoRouter.post(routes.videoUpload, onlyPrivate, uploadVideo, postVideoUpload)
 
 videoRouter.get(routes.editVideo(), onlyPrivate, getEditVideo)
 videoRouter.post(routes.editVideo(), onlyPrivate, postEditVideo)

@@ -9,6 +9,7 @@ import MongoStore from "connect-mongo"
 import userRouter from "./routers/userRouter"
 import videoRouter from "./routers/videoRouter"
 import globalRouter from "./routers/globalRouter"
+import apiRouter from "./routers/apiRouter"
 import routes from "./routes"
 import { localsMiddleware } from "./middlewares"
 import passport from "passport"
@@ -43,5 +44,6 @@ app.use(localsMiddleware)
 app.use(routes.users, userRouter)
 app.use(routes.home, globalRouter)
 app.use(routes.videos, videoRouter)
+app.use(routes.api, apiRouter)
 
 export default app
